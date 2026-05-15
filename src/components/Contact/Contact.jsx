@@ -71,11 +71,7 @@ const Contact = () => {
       .sendForm(
         "service_eoqmpyv",
         "template_2qr6s6l",
-         {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
+        form.current,
         "LGtVVvp5GkJdBBCPH"
       )
       .then(
