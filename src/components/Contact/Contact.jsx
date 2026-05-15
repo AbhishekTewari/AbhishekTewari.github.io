@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 const ContactInfo = () => {
@@ -64,28 +64,28 @@ const Contact = () => {
 
   const form = useRef();
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  //   emailjs
-  //     .sendForm(
-  //       "YOUR_SERVICE_ID",
-  //       "YOUR_TEMPLATE_ID",
-  //       form.current,
-  //       "YOUR_PUBLIC_KEY"
-  //     )
-  //     .then(
-  //       () => {
-  //         alert("Message sent successfully!");
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //         alert("Failed to send message.");
-  //       }
-  //     );
+    emailjs
+      .sendForm(
+        "service_eoqmpyv",
+        "template_2qr6s6l",
+        form.current,
+        "LGtVVvp5GkJdBBCPH"
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed to send message.");
+        }
+      );
 
-  //   e.target.reset();
-  // };
+    e.target.reset();
+  };
 
   return (
     <section className="contact-section" id="contact">
@@ -101,7 +101,7 @@ const Contact = () => {
           </p>
           <ContactInfo />
         </div>
-        <form ref={form} className="contact-form">
+        <form ref={form}onSubmit={sendEmail} className="contact-form">
           <input
             type="text"
             name="user_name"
