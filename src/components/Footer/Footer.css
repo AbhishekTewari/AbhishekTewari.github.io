@@ -24,7 +24,7 @@
 }
 
 .footer-links {
-  display: contents;
+  display: flex;
   gap: 25px;
   list-style: none;
 }
@@ -64,4 +64,10 @@
 .footer-bottom p {
   color: #777;
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+   display:contents;
+  }
 }
